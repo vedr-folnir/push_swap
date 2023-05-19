@@ -6,7 +6,7 @@
 /*   By: hlasota <hlasota@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 14:21:39 by hlasota           #+#    #+#             */
-/*   Updated: 2023/05/19 10:28:35 by hlasota          ###   ########.fr       */
+/*   Updated: 2023/05/19 14:14:59 by hlasota          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include<stdio.h>
@@ -32,7 +32,7 @@ static void	lettre(const char *str)
 	}
 }
 
-int reduc(const char *str, int i, long int result)
+int	reduc(const char *str, int i, long int result)
 {
 	while (str[i] >= 48 && str[i] <= 57)
 	{

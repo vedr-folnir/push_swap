@@ -17,32 +17,36 @@
 # include <unistd.h>
 # include <stdio.h>
 
-typedef struct	Element Element;
-struct Element
+typedef struct s_element	t_element;
+struct s_element
 {
-    int nombre;
-    Element *suivant;
+	int			nombre;
+	t_element	*suivant;
 };
-typedef struct	Liste Liste;
-struct Liste
+typedef struct s_liste		t_liste;
+struct s_liste
 {
-    Element *premier;
+	t_element	*premier;
 };
 
-
-
-Liste 	*initialisation();
-void	insertion(Liste *liste, int nvNombre);
-void	suppression(Liste *liste);
-void	afficherListe(Liste *liste);
-void	sa(Liste *liste);
-void	pa(Liste *listeA, Liste *listeB);
-int	lst_size(Liste *liste);
-void	ra(Liste *liste);
-void	rra(Liste *liste);
+t_liste	*initialisation(void);
+void	insertion(t_liste *liste, int nvNombre);
+void	suppression(t_liste *liste);
+void	afficherListe(t_liste *liste);
+void	sa(t_liste *liste);
+void	pa(t_liste *listeA, t_liste *listeB);
+int		lst_size(t_liste *liste);
+void	ra(t_liste *liste);
+void	rra(t_liste *liste);
 char	**ft_piece_2(char **dst, int *lw, const char *str, char c);
 char	**ft_split(const char *str, char c);
-int	ft_atoi(const char *str);
-int	is_sorted(Liste *liste);
-void	doublon(Liste *liste, int n);
+int		ft_atoi(const char *str);
+int		is_sorted(t_liste *liste);
+void	doublon(t_liste *liste, int n);
+t_liste	*copier_vide(t_liste *liste);
+void	changer_val(t_liste *liste, int where, int val);
+int		ch_min(t_liste *liste, t_liste *change, int a_min, int val);
+int		ch_max(t_liste *liste);
+void	simple(t_liste *liste, t_liste *change);
+
 #endif

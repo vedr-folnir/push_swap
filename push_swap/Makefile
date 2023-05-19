@@ -18,6 +18,7 @@ SRCS        :=      test.c \
 					ft_atoi.c \
 					ft_split.c \
 					ft_a.c \
+					ft_simple_list.c \
                           
 OBJS        := $(SRCS:.c=.o)
 

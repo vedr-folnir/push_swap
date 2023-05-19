@@ -6,15 +6,15 @@
 /*   By: hlasota <hlasota@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 18:54:05 by hlasota           #+#    #+#             */
-/*   Updated: 2023/05/15 17:22:34 by hlasota          ###   ########.fr       */
+/*   Updated: 2023/05/19 16:10:13 by hlasota          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
 
-void	sa(Liste *liste)
+void	sa(t_liste *liste)
 {
-	int		x;
-	Element	*actuel;
+	int			x;
+	t_element	*actuel;
 
 	actuel = liste->premier->suivant;
 	x = actuel->nombre;
@@ -22,19 +22,19 @@ void	sa(Liste *liste)
 	actuel->suivant->nombre = x;
 }
 
-void	pa(Liste *liste_a, Liste *liste_b)
+void	pa(t_liste *liste_a, t_liste *liste_b)
 {
-	Element	*actuel_b;
+	t_element	*actuel_b;
 
 	actuel_b = liste_b->premier->suivant;
 	insertion(liste_a, actuel_b->nombre);
 	suppression(liste_b);
 }
 
-void	ra(Liste *liste)
+void	ra(t_liste *liste)
 {
-	int		x;
-	Element	*actuel;
+	int			x;
+	t_element	*actuel;
 
 	actuel = liste->premier->suivant;
 	x = actuel->nombre;
@@ -46,11 +46,11 @@ void	ra(Liste *liste)
 	actuel->nombre = x;
 }
 
-void	rra(Liste *liste)
+void	rra(t_liste *liste)
 {
-	int		x;
-	int		y;
-	Element	*actuel;
+	int			x;
+	int			y;
+	t_element	*actuel;
 
 	actuel = liste->premier->suivant;
 	x = actuel->nombre;
