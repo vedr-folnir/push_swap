@@ -6,7 +6,7 @@
 /*   By: hlasota <hlasota@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 18:54:05 by hlasota           #+#    #+#             */
-/*   Updated: 2023/05/15 17:08:50 by hlasota          ###   ########.fr       */
+/*   Updated: 2023/05/15 17:22:34 by hlasota          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -21,19 +21,6 @@ void	sa(Liste *liste)
 	actuel->nombre = actuel->suivant->nombre;
 	actuel->suivant->nombre = x;
 }
-
-/*void	pa(Liste *liste_a, Liste *liste_b)
-{
-	int		x;
-	Element	*actuel_a;
-	Element	*actuel_b;
-
-	actuel_a = liste_a->premier->suivant;
-	actuel_b = liste_b->premier->suivant;
-	x = actuel_b->nombre;
-	actuel_b->nombre = actuel_a->nombre;
-	actuel_a->nombre = x;
-}*/
 
 void	pa(Liste *liste_a, Liste *liste_b)
 {

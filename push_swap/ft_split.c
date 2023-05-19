@@ -6,7 +6,7 @@
 /*   By: hlasota <hlasota@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 14:24:19 by hlasota           #+#    #+#             */
-/*   Updated: 2023/05/15 16:00:21 by hlasota          ###   ########.fr       */
+/*   Updated: 2023/05/15 17:24:20 by hlasota          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -103,7 +103,6 @@ char	**ft_split(const char *str, char c)
 	int		*lw;
 	char	**dst;
 
-	
 	word = ft_count_wrd(str, c);
 	lw = ft_count_len_wrd(str, c);
 	dst = (char **)malloc(sizeof(char *) * (word + 1));

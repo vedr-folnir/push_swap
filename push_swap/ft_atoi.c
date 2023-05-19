@@ -6,7 +6,7 @@
 /*   By: hlasota <hlasota@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 14:21:39 by hlasota           #+#    #+#             */
-/*   Updated: 2023/05/15 16:03:18 by hlasota          ###   ########.fr       */
+/*   Updated: 2023/05/19 10:28:35 by hlasota          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include<stdio.h>
@@ -19,6 +19,8 @@ static void	lettre(const char *str)
 	i = 0;
 	while (str[i])
 	{
+		if (str[i] == '-')
+			i++;
 		if (str[i] < '0' || str[i] > '9' || str[i] == ' '
 			|| str[i] == '\n' || str[i] == '\t' || str[i] == '\v'
 			|| str[i] == '\f' || str[i] == '\r')
@@ -30,11 +32,26 @@ static void	lettre(const char *str)
 	}
 }
 
+int reduc(const char *str, int i, long int result)
+{
+	while (str[i] >= 48 && str[i] <= 57)
+	{
+		result = result * 10 + (str[i] - 48);
+		i++;
+	}
+	if (result > 2147483647)
+	{
+		write(1, "ERROR\n", 6);
+		exit(EXIT_FAILURE);
+	}
+	return (result);
+}
+
 int	ft_atoi(const char *str)
 {
-	int	i;
-	int	j;
-	int	result;
+	int			i;
+	int			j;
+	long int	result;
 
 	i = 0;
 	j = 1;
@@ -51,10 +68,6 @@ int	ft_atoi(const char *str)
 		}
 		i++;
 	}
-	while (str[i] >= 48 && str[i] <= 57)
-	{
-		result = result * 10 + (str[i] - 48);
-		i++;
-	}
+	result = reduc(str, i, result);
 	return (result * j);
 }
